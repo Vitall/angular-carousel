@@ -376,7 +376,7 @@ angular.module('angular-carousel').run(['$templateCache', function($templateCach
                                 '</div>';
                             iElement.append($compile(angular.element(tpl))(scope));
                         }
-
+                      if(iAttributes.rnSwipeDisabled !== "true") {
                         $swipe.bind(iElement, {
                             start: swipeStart,
                             move: swipeMove,
@@ -385,7 +385,7 @@ angular.module('angular-carousel').run(['$templateCache', function($templateCach
                                 swipeEnd({}, event);
                             }
                         });
-
+                      }
                         function getSlidesDOM() {
                             return iElement[0].querySelectorAll('ul[rn-carousel] > li');
                         }
